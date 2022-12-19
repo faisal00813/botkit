@@ -36,7 +36,7 @@ import { ConversationAccount, ChannelAccount } from 'botbuilder';
         return this.changeContext({
             channelId: reference.channelId ?? 'twilio-sms',
             conversation: { id: reference.userId } as ConversationAccount,
-            bot: { id: referenceny.twilio_number, name: 'bot' },
+            bot: { id: reference.twilio_number, name: 'bot' },
             user: { id: reference.userId } as ChannelAccount
         });
     }
