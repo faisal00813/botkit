@@ -32,12 +32,12 @@ import { ConversationAccount, ChannelAccount } from 'botbuilder';
      *
      * @param userId A phone number in the form +1XXXYYYZZZZ
      */
-    public async startConversationWithUser(userId: string): Promise<any> {
+    public async startConversationWithUser(reference: any): Promise<any> {
         return this.changeContext({
-            channelId: 'twilio-sms',
-            conversation: { id: userId } as ConversationAccount,
-            bot: { id: this.controller.getConfig('twilio_number'), name: 'bot' },
-            user: { id: userId } as ChannelAccount
+            channelId: reference.channelId ?? 'twilio-sms',
+            conversation: { id: reference.userId } as ConversationAccount,
+            bot: { id: referenceny.twilio_number, name: 'bot' },
+            user: { id: reference.userId } as ChannelAccount
         });
     }
 }
